@@ -1,0 +1,247 @@
+---
+title: "Nonexclusive"
+subtitle: "Polygamous Machine Learning/Visualization<br/>in R and Finance"
+author: "Kent Russell"
+date: "2017-11-08"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    chakra: "./src/remark-latest.min.js"
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle
+
+Absolutely none of this should be considered investment advice.
+
+These are my own views and opinions and are subject to change without notice.
+
+Past performance does not indicate future results.
+
+---
+
+background-image: url("./images/friends_on_a_break.gif")
+background-size: 80%
+
+Image credit: [Giphy](https://giphy.com/gifs/break-ross-geller-david-schwimmer-TBXlEhCiia69G)
+
+---
+class: center, middle
+
+.pull-left[
+# Python + R
+
+### [reticulate](https://rstudio.github.io/reticulate/)
+### [feather](https://blog.rstudio.com/2016/03/29/feather/) | Hadley Wickham and Wes McKinney
+]
+
+.pull-right[
+# TensorFlow & keras + R
+
+### [TensorFlow](https://tensorflow.rstudio.com/)
+### [Keras](https://tensorflow.rstudio.com/keras/)
+]
+
+---
+class: center, middle
+
+.pull-left[
+# JavaScript + R
+
+### [v8](https://cran.r-project.org/web/packages/V8/vignettes/v8_intro.html)
+### [jsonlite](https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html)
+### [d3r](https://github.com/timelyportfolio/d3r)
+]
+
+.pull-right[
+# HTML/CSS + R
+
+### [htmlwidgets](http://htmlwidgets.org)
+### [blogdown](https://blog.rstudio.com/2017/09/11/announcing-blogdown/)
+### [htmltools](https://github.com/rstudio/htmltools)
+### [BuildingWidgets blog](https://buildingwidgets.com/blog)
+]
+
+---
+class: inverse, center, middle
+
+# Machine Learning in R
+
+---
+
+# Packages with Examples and Tutorials
+
+**[caret](http://topepo.github.io/caret/index.html)**
+
+[Predictive modeling and machine learning in R with the `caret` package](https://www.zevross.com/blog/2017/09/19/predictive-modeling-and-machine-learning-in-r-with-the-caret-package/)
+
+**[mlr](https://github.com/mlr-org/mlr)**
+
+[Machine Learning in R: mlr Tutorial](https://mlr-org.github.io/mlr-tutorial/release/html/)
+
+**[TensorFlow](https://tensorflow.rstudio.com/)**
+
+[Intro to TensorFlow in R](https://www.edgarsdatalab.com/2017/10/22/intro-to-tensorflow-in-r/)
+[keras examples](https://tensorflow.rstudio.com/keras/articles/examples/)
+
+**[Spark](https://spark.rstudio.com/)**
+
+[Sparklyr and R Sparkling - Jeff Allen](https://www.youtube.com/watch?v=oItFZfzqqMY)
+
+[Sparklyr: Recap, Updates, and Use Cases - Javier Luraschi](https://www.youtube.com/watch?v=II4NGlL3Flk)
+
+**[ompr](https://dirkschumacher.github.io/ompr/)**
+
+[Solve Sudokus using MILP](https://dirkschumacher.github.io/ompr/articles/problem-sudoku.html)
+
+---
+# Explaining Your Model
+
+### R has `lime` too | [lime](https://github.com/thomasp85/lime)
+
+[Explaining complex machine learning models with LIME](https://shiring.github.io/machine_learning/2017/04/23/lime)
+
+[Using Machine Learning to Predict Employee Turnover](http://www.business-science.io/business/2017/09/18/hr_employee_attrition.html)
+
+### Award-winning `TensorBoard` | Visualizing TensorFlow 
+
+[video](https://vimeo.com/237663041)
+
+[in R](https://tensorflow.rstudio.com/tools/tensorboard.html)
+
+---
+
+# More Examples
+
+h20 | [Use H2O and data.table to build models on large data sets in R](https://www.analyticsvidhya.com/blog/2016/05/h2o-data-table-build-models-large-data-sets/)
+
+fraud detection | [Data Science for Fraud Detection](https://blog.codecentric.de/en/2017/09/data-science-fraud-detection/)
+
+baby naming with machine learning | [Percival Bresler's Got Neural Gas](http://asbcllc.com/blog/2017/may/percy_has_neural_gas/index.html)
+
+
+fake startups with neural networks | [Juice, Err, Ohh...](http://asbcllc.com/blog/2017/september/juice_err_ohhh/index.html)
+
+explanation of hierarchical models (R + react + d3) | [Visualizing Hierarchical Models](http://mfviz.com/hierarchical-models/)
+
+---
+class: inverse, center, middle
+
+# Machine Learning in Finance
+
+---
+
+![screenshot of bloomberg article on machine learning](./images/bloomberg_robots_wall_street.png)
+
+Bloomberg: [Robots Are Coming for These Wall Street Jobs](https://www.bloomberg.com/graphics/2017-wall-street-robots/)
+
+---
+# Hedge Funds
+
+.pull-left[
+### [Numerai](https://numer.ai/) | Crowd Sourced Machine Learning Hedge Fund
+
+[Medium Post](https://medium.com/numerai/invisible-super-intelligence-for-the-stock-market-3c64b57b244c)
+
+[Wired Article](https://www.wired.com/2016/12/7500-faceless-coders-paid-bitcoin-built-hedge-funds-brain/)
+
+[This Week in Startups Podcast](https://overcast.fm/+JyHRMMQQ)
+]
+
+.pull-right[
+### [Superior ROI with AI-Driven Funds](https://seekingalpha.com/article/4083754-superior-portfolio-roi-artificially-intelligent-algorithms)
+
+![chart of price performance of ai driven funds](./images/ai_hedge_funds.png)
+]
+
+---
+# [An Academic Review: Applications of Data Mining Techniques in Finance Industry](https://dspace.lib.cranfield.ac.uk/handle/1826/11911)
+
+<span style="font-size:.8em;>"Jadhav S, He H, Jenkins K, An Academic Review: Applications of Data Mining Techniques in Finance Industry, International Journal of Soft Computing and Artificial Intelligence, Volume 4, Issue 1, Pages 79 - 95.</span>
+
+.pull-left[
+> In this paper, we survey totally about 200 papers, in the research on data mining technologies for computational finance, published in the years from
+2010 to 2015, in respects of classic business issues in finance industry, such as **Credit rating** (Section 2), **Loan prediction** (Section 3), **Money laundering** (Section 4), **Stocks prediction** (Section 5) and **Time series** (Section 6).
+]
+
+.pull-right[
+<img style="height:400px;" src="./images/ml_finance_credit_rating.png" alt="chart of machine learning for credit rating"/>
+]
+
+
+---
+# Interactive Version of Chart
+
+see [htmlwidgets](http://htmlwidgets.org) and **especially the [gallery](http://gallery.htmlwidgets.org/)**
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(highcharter)
+
+df <- data.frame(
+  method=c("hybrid", "nn", "svm", "reg", "dt", "other"),
+  count=c(24,14,13,11,10,8)
+)
+
+highchart() %>%
+  hc_chart(type = "pie") %>%
+  hc_add_series_labels_values(
+    labels = df$method,
+    values = df$count
+  ) %>%
+  hc_title(
+    text = "Distribution of Surveyed Techniques in Credit Rating"
+  )
+```
+
+
+---
+# More Articles
+
+[IBM's Watson Is Key to a New Artificial Intelligence-Powered ETF](https://www.bloomberg.com/news/articles/2017-10-17/ibm-s-watson-is-key-to-new-artificial-intelligence-powered-etf)
+
+[How Machine Learning Is Helping Morgan Stanley Better Understand Client Needs](https://hbr.org/2017/08/how-machine-learning-is-helping-morgan-stanley-better-understand-client-needs)
+
+[Goldman Partnerships: Not Just for Bankers and Traders](https://www.wsj.com/articles/goldman-partnerships-not-just-for-bankers-and-traders-1507649581)
+
+[The 7 Reasons Most Machine Learning Funds Fail (Presentation Slides)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3031282)
+
+[p-Hacking: Evidence from Two Million Trading Strategies](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3017677)
+
+
+---
+# Machine Learning (not called "ml") in Portfolio Management/Analytics
+
+Just because it isn't usually called "machine learning", a lot of portfolio management, analytics, and optimization incorporates techniques now commonly used in machine learning.
+
+Harry Markowitz's seminal 1952 paper [Portfolio Selection](https://scholar.google.com/scholar?cluster=5160592821225000015&hl=en&as_sdt=0,30&as_vis=1) is matrix math.   See [An Open-Source Implementation of the Critical-Line Algorithm for Portfolio Optimization](https://pdfs.semanticscholar.org/4fb1/2c1129ba5389bafe47b03e595d098d0252b9.pdf) and [repo](https://github.com/mdengler/cla).
+
+## R Portfolio Packages
+
+### [PortfolioAnalytics](https://cran.r-project.org/web/packages/PortfolioAnalytics/index.html)
+
+### [fPortfolio](https://cran.r-project.org/web/packages/fPortfolio/index.html)
+
+## More
+
+paper | [Machine Learning and Portfolio Optimization](https://www.semanticscholar.org/paper/Machine-Learning-and-Portfolio-Optimization-Ban-Karoui/117533d84e74ff481bef56ed25d61c6f90cb7da9)
+
+> We modify two popular methods in machine learning, regularization and cross-validation, for the portfolio optimization problem. 
+
+
+---
+class: center, middle
+
+# Thanks!
+
+Reproducible at [Github repo](https://github.com/timelyportfolio/slides_ml_r_finance)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).

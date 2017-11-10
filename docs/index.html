@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nonexclusive</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Kent Russell" />
+    <meta name="date" content="2017-11-08" />
+    <link href="libs/remark-css/example.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/proj4js/proj4.js"></script>
+    <link href="libs/highcharts/css/motion.css" rel="stylesheet" />
+    <script src="libs/highcharts/highstock.js"></script>
+    <script src="libs/highcharts/highcharts-3d.js"></script>
+    <script src="libs/highcharts/highcharts-more.js"></script>
+    <script src="libs/highcharts/modules/annotations.js"></script>
+    <script src="libs/highcharts/modules/broken-axis.js"></script>
+    <script src="libs/highcharts/modules/data.js"></script>
+    <script src="libs/highcharts/modules/drilldown.js"></script>
+    <script src="libs/highcharts/modules/exporting.js"></script>
+    <script src="libs/highcharts/modules/funnel.js"></script>
+    <script src="libs/highcharts/modules/heatmap.js"></script>
+    <script src="libs/highcharts/modules/map.js"></script>
+    <script src="libs/highcharts/modules/no-data-to-display.js"></script>
+    <script src="libs/highcharts/modules/offline-exporting.js"></script>
+    <script src="libs/highcharts/modules/solid-gauge.js"></script>
+    <script src="libs/highcharts/modules/treemap.js"></script>
+    <script src="libs/highcharts/plugins/annotations.js"></script>
+    <script src="libs/highcharts/plugins/draggable-legend.js"></script>
+    <script src="libs/highcharts/plugins/draggable-points.js"></script>
+    <script src="libs/highcharts/plugins/export-csv.js"></script>
+    <script src="libs/highcharts/plugins/grouped-categories.js"></script>
+    <script src="libs/highcharts/plugins/motion.js"></script>
+    <script src="libs/highcharts/plugins/pattern-fill-v2.js"></script>
+    <script src="libs/highcharts/plugins/tooltip-delay.js"></script>
+    <script src="libs/highcharts/custom/reset.js"></script>
+    <script src="libs/highcharts/custom/symbols-extra.js"></script>
+    <script src="libs/highcharts/custom/text-symbols.js"></script>
+    <link href="libs/fontawesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="libs/htmlwdgtgrid/htmlwdgtgrid.css" rel="stylesheet" />
+    <script src="libs/highchart-binding/highchart.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Nonexclusive
+## Polygamous Machine Learning/Visualization<br/>in R and Finance
+### Kent Russell
+### 2017-11-08
+
+---
+
+
+
+
+class: center, middle
+
+Absolutely none of this should be considered investment advice.
+
+These are my own views and opinions and are subject to change without notice.
+
+Past performance does not indicate future results.
+
+---
+
+background-image: url("./images/friends_on_a_break.gif")
+background-size: 80%
+
+Image credit: [Giphy](https://giphy.com/gifs/break-ross-geller-david-schwimmer-TBXlEhCiia69G)
+
+---
+class: center, middle
+
+.pull-left[
+# Python + R
+
+### [reticulate](https://rstudio.github.io/reticulate/)
+### [feather](https://blog.rstudio.com/2016/03/29/feather/) | Hadley Wickham and Wes McKinney
+]
+
+.pull-right[
+# TensorFlow &amp; keras + R
+
+### [TensorFlow](https://tensorflow.rstudio.com/)
+### [Keras](https://tensorflow.rstudio.com/keras/)
+]
+
+---
+class: center, middle
+
+.pull-left[
+# JavaScript + R
+
+### [v8](https://cran.r-project.org/web/packages/V8/vignettes/v8_intro.html)
+### [jsonlite](https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html)
+### [d3r](https://github.com/timelyportfolio/d3r)
+]
+
+.pull-right[
+# HTML/CSS + R
+
+### [htmlwidgets](http://htmlwidgets.org)
+### [blogdown](https://blog.rstudio.com/2017/09/11/announcing-blogdown/)
+### [htmltools](https://github.com/rstudio/htmltools)
+### [BuildingWidgets blog](https://buildingwidgets.com/blog)
+]
+
+---
+class: inverse, center, middle
+
+# Machine Learning in R
+
+---
+
+# Packages with Examples and Tutorials
+
+**[caret](http://topepo.github.io/caret/index.html)**
+
+[Predictive modeling and machine learning in R with the `caret` package](https://www.zevross.com/blog/2017/09/19/predictive-modeling-and-machine-learning-in-r-with-the-caret-package/)
+
+**[mlr](https://github.com/mlr-org/mlr)**
+
+[Machine Learning in R: mlr Tutorial](https://mlr-org.github.io/mlr-tutorial/release/html/)
+
+**[TensorFlow](https://tensorflow.rstudio.com/)**
+
+[Intro to TensorFlow in R](https://www.edgarsdatalab.com/2017/10/22/intro-to-tensorflow-in-r/)
+[keras examples](https://tensorflow.rstudio.com/keras/articles/examples/)
+
+**[Spark](https://spark.rstudio.com/)**
+
+[Sparklyr and R Sparkling - Jeff Allen](https://www.youtube.com/watch?v=oItFZfzqqMY)
+
+[Sparklyr: Recap, Updates, and Use Cases - Javier Luraschi](https://www.youtube.com/watch?v=II4NGlL3Flk)
+
+**[ompr](https://dirkschumacher.github.io/ompr/)**
+
+[Solve Sudokus using MILP](https://dirkschumacher.github.io/ompr/articles/problem-sudoku.html)
+
+---
+# Explaining Your Model
+
+### R has `lime` too | [lime](https://github.com/thomasp85/lime)
+
+[Explaining complex machine learning models with LIME](https://shiring.github.io/machine_learning/2017/04/23/lime)
+
+[Using Machine Learning to Predict Employee Turnover](http://www.business-science.io/business/2017/09/18/hr_employee_attrition.html)
+
+### Award-winning `TensorBoard` | Visualizing TensorFlow 
+
+[video](https://vimeo.com/237663041)
+
+[in R](https://tensorflow.rstudio.com/tools/tensorboard.html)
+
+---
+
+# More Examples
+
+h20 | [Use H2O and data.table to build models on large data sets in R](https://www.analyticsvidhya.com/blog/2016/05/h2o-data-table-build-models-large-data-sets/)
+
+fraud detection | [Data Science for Fraud Detection](https://blog.codecentric.de/en/2017/09/data-science-fraud-detection/)
+
+baby naming with machine learning | [Percival Bresler's Got Neural Gas](http://asbcllc.com/blog/2017/may/percy_has_neural_gas/index.html)
+
+
+fake startups with neural networks | [Juice, Err, Ohh...](http://asbcllc.com/blog/2017/september/juice_err_ohhh/index.html)
+
+explanation of hierarchical models (R + react + d3) | [Visualizing Hierarchical Models](http://mfviz.com/hierarchical-models/)
+
+---
+class: inverse, center, middle
+
+# Machine Learning in Finance
+
+---
+
+![screenshot of bloomberg article on machine learning](./images/bloomberg_robots_wall_street.png)
+
+Bloomberg: [Robots Are Coming for These Wall Street Jobs](https://www.bloomberg.com/graphics/2017-wall-street-robots/)
+
+---
+# Hedge Funds
+
+.pull-left[
+### [Numerai](https://numer.ai/) | Crowd Sourced Machine Learning Hedge Fund
+
+[Medium Post](https://medium.com/numerai/invisible-super-intelligence-for-the-stock-market-3c64b57b244c)
+
+[Wired Article](https://www.wired.com/2016/12/7500-faceless-coders-paid-bitcoin-built-hedge-funds-brain/)
+
+[This Week in Startups Podcast](https://overcast.fm/+JyHRMMQQ)
+]
+
+.pull-right[
+### [Superior ROI with AI-Driven Funds](https://seekingalpha.com/article/4083754-superior-portfolio-roi-artificially-intelligent-algorithms)
+
+![chart of price performance of ai driven funds](./images/ai_hedge_funds.png)
+]
+
+---
+# [An Academic Review: Applications of Data Mining Techniques in Finance Industry](https://dspace.lib.cranfield.ac.uk/handle/1826/11911)
+
+&lt;span style="font-size:.8em;&gt;"Jadhav S, He H, Jenkins K, An Academic Review: Applications of Data Mining Techniques in Finance Industry, International Journal of Soft Computing and Artificial Intelligence, Volume 4, Issue 1, Pages 79 - 95.&lt;/span&gt;
+
+.pull-left[
+&gt; In this paper, we survey totally about 200 papers, in the research on data mining technologies for computational finance, published in the years from
+2010 to 2015, in respects of classic business issues in finance industry, such as **Credit rating** (Section 2), **Loan prediction** (Section 3), **Money laundering** (Section 4), **Stocks prediction** (Section 5) and **Time series** (Section 6).
+]
+
+.pull-right[
+&lt;img style="height:400px;" src="./images/ml_finance_credit_rating.png" alt="chart of machine learning for credit rating"/&gt;
+]
+
+
+---
+# Interactive Version of Chart
+
+see [htmlwidgets](http://htmlwidgets.org) and **especially the [gallery](http://gallery.htmlwidgets.org/)**
+
+<div id="htmlwidget-f0292b32217f24e02cfc" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f0292b32217f24e02cfc">{"x":{"hc_opts":{"title":{"text":"Distribution of Surveyed Techniques in Credit Rating"},"yAxis":{"title":{"text":null}},"credits":{"enabled":false},"exporting":{"enabled":false},"plotOptions":{"series":{"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"},"bubble":{"minSize":5,"maxSize":25}},"annotationsOptions":{"enabledButtons":false},"tooltip":{"delayForDisplay":10},"chart":{"type":"pie"},"series":[{"data":[{"name":"hybrid","y":24},{"name":"nn","y":14},{"name":"svm","y":13},{"name":"reg","y":11},{"name":"dt","y":10},{"name":"other","y":8}]}]},"theme":{"chart":{"backgroundColor":"transparent"}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
+
+
+---
+# More Articles
+
+[IBM's Watson Is Key to a New Artificial Intelligence-Powered ETF](https://www.bloomberg.com/news/articles/2017-10-17/ibm-s-watson-is-key-to-new-artificial-intelligence-powered-etf)
+
+[How Machine Learning Is Helping Morgan Stanley Better Understand Client Needs](https://hbr.org/2017/08/how-machine-learning-is-helping-morgan-stanley-better-understand-client-needs)
+
+[Goldman Partnerships: Not Just for Bankers and Traders](https://www.wsj.com/articles/goldman-partnerships-not-just-for-bankers-and-traders-1507649581)
+
+[The 7 Reasons Most Machine Learning Funds Fail (Presentation Slides)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3031282)
+
+[p-Hacking: Evidence from Two Million Trading Strategies](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3017677)
+
+
+---
+# Machine Learning (not called "ml") in Portfolio Management/Analytics
+
+Just because it isn't usually called "machine learning", a lot of portfolio management, analytics, and optimization incorporates techniques now commonly used in machine learning.
+
+Harry Markowitz's seminal 1952 paper [Portfolio Selection](https://scholar.google.com/scholar?cluster=5160592821225000015&amp;hl=en&amp;as_sdt=0,30&amp;as_vis=1) is matrix math.   See [An Open-Source Implementation of the Critical-Line Algorithm for Portfolio Optimization](https://pdfs.semanticscholar.org/4fb1/2c1129ba5389bafe47b03e595d098d0252b9.pdf) and [repo](https://github.com/mdengler/cla).
+
+## R Portfolio Packages
+
+### [PortfolioAnalytics](https://cran.r-project.org/web/packages/PortfolioAnalytics/index.html)
+
+### [fPortfolio](https://cran.r-project.org/web/packages/fPortfolio/index.html)
+
+## More
+
+paper | [Machine Learning and Portfolio Optimization](https://www.semanticscholar.org/paper/Machine-Learning-and-Portfolio-Optimization-Ban-Karoui/117533d84e74ff481bef56ed25d61c6f90cb7da9)
+
+&gt; We modify two popular methods in machine learning, regularization and cross-validation, for the portfolio optimization problem. 
+
+
+---
+class: center, middle
+
+# Thanks!
+
+Reproducible at [Github repo](https://github.com/timelyportfolio/slides_ml_r_finance)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<script src="./src/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
+(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
